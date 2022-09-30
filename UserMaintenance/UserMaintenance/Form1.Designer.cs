@@ -83,8 +83,9 @@ namespace UserMaintenance
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 60);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Hozzáad";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
