@@ -58,5 +58,18 @@ namespace UserMaintenance
                 sw.Close();
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.Items.Clear();            
+        }
+
+        private void ResetBtn_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = users;
+            listBox1.ValueMember = "ID";
+            listBox1.DisplayMember = "FullName";
+        }
     }
 }
