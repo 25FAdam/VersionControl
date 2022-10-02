@@ -35,7 +35,6 @@ namespace UserMaintenance
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
-            this.ResetBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -64,7 +63,7 @@ namespace UserMaintenance
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 100);
+            this.button1.Location = new System.Drawing.Point(216, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 60);
             this.button1.TabIndex = 5;
@@ -74,7 +73,7 @@ namespace UserMaintenance
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(216, 167);
+            this.button2.Location = new System.Drawing.Point(216, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 83);
             this.button2.TabIndex = 6;
@@ -84,30 +83,19 @@ namespace UserMaintenance
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Location = new System.Drawing.Point(427, 100);
+            this.DeleteBtn.Location = new System.Drawing.Point(216, 189);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(150, 60);
+            this.DeleteBtn.Size = new System.Drawing.Size(187, 60);
             this.DeleteBtn.TabIndex = 7;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
-            // ResetBtn
-            // 
-            this.ResetBtn.Location = new System.Drawing.Point(427, 167);
-            this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(150, 83);
-            this.ResetBtn.TabIndex = 8;
-            this.ResetBtn.Text = "Reset";
-            this.ResetBtn.UseVisualStyleBackColor = true;
-            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 280);
-            this.Controls.Add(this.ResetBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -129,7 +117,6 @@ namespace UserMaintenance
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Button ResetBtn;
     }
 }
 
