@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace negyedikhet
 {
     public partial class Form1 : Form
-    {
+    {        
         RealEstateEntities context = new RealEstateEntities();
         List<Flat> Flats;
         public Form1()
