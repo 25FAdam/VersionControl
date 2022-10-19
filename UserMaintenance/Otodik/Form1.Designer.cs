@@ -29,8 +29,13 @@ namespace Otodik
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chartRateDate = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRateDate)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -38,18 +43,36 @@ namespace Otodik
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(445, 353);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // chartRateDate
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartRateDate.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRateDate.Legends.Add(legend1);
+            this.chartRateDate.Location = new System.Drawing.Point(498, 43);
+            this.chartRateDate.Name = "chartRateDate";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRateDate.Series.Add(series1);
+            this.chartRateDate.Size = new System.Drawing.Size(300, 300);
+            this.chartRateDate.TabIndex = 1;
+            this.chartRateDate.Text = "chart1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(973, 450);
+            this.Controls.Add(this.chartRateDate);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRateDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,6 +80,7 @@ namespace Otodik
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRateDate;
     }
 }
 

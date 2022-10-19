@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace Otodik
@@ -52,18 +53,34 @@ namespace Otodik
                 var rate = new RateDate();
                 Rates.Add(rate);
 
-                // Dátum
+                //Date
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
 
-                // Valuta
+                //Currency
                 var childElement = (XmlElement)element.ChildNodes[0];
                 rate.Currency = childElement.GetAttribute("curr");
 
-                // Érték
+                //Value
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));
                 var value = decimal.Parse(childElement.InnerText);
                 if (unit != 0)
                     rate.Value = value / unit;
+
+                chartRateDate.DataSource = Rates;
+
+                var series = chartRateDate.Series[0];
+                series.ChartType = SeriesChartType.Line;
+                series.XValueMember = "Date";
+                series.YValueMembers = "Value";
+                series.BorderWidth = 2;
+
+                var legend = chartRateDate.Legends[0];
+                legend.Enabled = false;
+
+                var chartArea = chartRateDate.ChartAreas[0];
+                chartArea.AxisX.MajorGrid.Enabled = false;
+                chartArea.AxisY.MajorGrid.Enabled = false;
+                chartArea.AxisY.IsStartedFromZero = false;
             }
         }     
     }
