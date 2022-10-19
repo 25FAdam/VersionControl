@@ -21,19 +21,36 @@ namespace Otodik
         public Form1()
         {
             InitializeComponent();
-            Elso();
-            dataGridView1.DataSource = Rates.ToList();
+            RefreshData();
         }
 
+        private void RefreshData()
+        {
+            Rates.Clear();
+            Elso();
+            dataGridView1.DataSource = Rates.ToList();
+            
+        }
+        public void Add()
+        {
+            List<Currency> currencies = new List<Currency>();
+            currencies.Add(new Currency() { CurrencyA = "EUR" });
+            currencies.Add(new Currency() { CurrencyA = "HUF" });
+            currencies.Add(new Currency() { CurrencyA = "USD" });
+
+            comboBox1.DataSource = currencies;
+            comboBox1.DisplayMember = "CurrencyA";
+        }
         public void Elso()
         {
+            Add();
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
             {
                 currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                startDate = dateTimePicker1.Value.ToString(),
+                endDate = dateTimePicker2.Value.ToString()
             };
 
             
@@ -82,6 +99,21 @@ namespace Otodik
                 chartArea.AxisY.MajorGrid.Enabled = false;
                 chartArea.AxisY.IsStartedFromZero = false;
             }
-        }     
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }
