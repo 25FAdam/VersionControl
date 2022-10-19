@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Otodik.Entities
 {
-    class RateDate
+    public class RateDate
     {
+        public DateTime Date { get; set; }
+        public string Currency { get; set; }
+        public decimal Value { get; set; }
 
     }
 }
