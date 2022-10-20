@@ -17,7 +17,7 @@ namespace Otodik
     public partial class Form1 : Form
     {
         BindingList<RateDate> Rates = new BindingList<RateDate>();
-        
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
@@ -31,19 +31,19 @@ namespace Otodik
             dataGridView1.DataSource = Rates.ToList();
             
         }
-        public void Add()
+        /*public void Add()
         {
-            List<Currency> currencies = new List<Currency>();
-            currencies.Add(new Currency() { CurrencyA = "EUR" });
-            currencies.Add(new Currency() { CurrencyA = "HUF" });
-            currencies.Add(new Currency() { CurrencyA = "USD" });
+            List<Currency> list = new List<Currency>();
+            list.Add(new Currency() { CurrencyA = "EUR" });
+            list.Add(new Currency() { CurrencyA = "HUF" });
+            list.Add(new Currency() { CurrencyA = "USD" });
 
-            comboBox1.DataSource = currencies;
-            comboBox1.DisplayMember = "CurrencyA";
-        }
+            comboBox1.DataSource = Currencies.ToList();
+            
+        }*/
         public void Elso()
         {
-            Add();
+            //Add();
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
@@ -66,7 +66,6 @@ namespace Otodik
 
             foreach (XmlElement element in xml.DocumentElement)
             {
-
                 var rate = new RateDate();
                 Rates.Add(rate);
 
@@ -114,6 +113,20 @@ namespace Otodik
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Add();
+            Dictionary<string, string> comboSource = new Dictionary<string, string>();
+            comboSource.Add("elso", "EUR");
+            comboSource.Add("masodik", "USD");
+            comboSource.Add("harmadik", "HUF");
+            comboSource.Add("negyedik", "CHF");
+            comboSource.Add("otodik", "GBP");            
+            comboBox1.DataSource = new BindingSource(comboSource, null);
+            comboBox1.DisplayMember = "Value";
+            comboBox1.ValueMember = "Key";
         }
     }
 }

@@ -29,9 +29,9 @@ namespace Otodik
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chartRateDate = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,16 +51,16 @@ namespace Otodik
             // 
             // chartRateDate
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartRateDate.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartRateDate.Legends.Add(legend4);
+            chartArea3.Name = "ChartArea1";
+            this.chartRateDate.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartRateDate.Legends.Add(legend3);
             this.chartRateDate.Location = new System.Drawing.Point(498, 43);
             this.chartRateDate.Name = "chartRateDate";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartRateDate.Series.Add(series4);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartRateDate.Series.Add(series3);
             this.chartRateDate.Size = new System.Drawing.Size(300, 300);
             this.chartRateDate.TabIndex = 1;
             this.chartRateDate.Text = "chart1";
@@ -84,11 +84,10 @@ namespace Otodik
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(498, 15);
+            this.comboBox1.Location = new System.Drawing.Point(498, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -102,6 +101,7 @@ namespace Otodik
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartRateDate)).EndInit();
             this.ResumeLayout(false);
