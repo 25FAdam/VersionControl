@@ -20,7 +20,10 @@ namespace Otodik
         public BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            Add();
+            dataGridView1.DataSource = Rates;
+            comboBox1.DataSource = Currencies;            
             RefreshData();            
         }
 
@@ -28,19 +31,20 @@ namespace Otodik
         {
             Rates.Clear();
             Elso();
-            dataGridView1.DataSource = Rates.ToList();
+            
             
         }
-        /*public void Add()
-        {
-            List<Currency> list = new List<Currency>();
-            list.Add(new Currency() { CurrencyA = "EUR" });
-            list.Add(new Currency() { CurrencyA = "HUF" });
-            list.Add(new Currency() { CurrencyA = "USD" });
-
-            comboBox1.DataSource = Currencies.ToList();
+        public void Add()
+        {            
+            Currencies.Add("EUR");
+            Currencies.Add("CHF");
+            Currencies.Add("USD");                   
+            Currencies.Add("GBP");                  
+            Currencies.Add("JPY");                  
+            Currencies.Add("AUD");                
+            Currencies.Add("CAD");                  
             
-        }*/
+        }
        
         public void Elso()
         {
@@ -50,7 +54,7 @@ namespace Otodik
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
+                currencyNames = comboBox1.SelectedItem.ToString(),
                 startDate = dateTimePicker1.Value.ToString(),
                 endDate = dateTimePicker2.Value.ToString()                
             };
@@ -131,5 +135,6 @@ namespace Otodik
             comboBox1.DisplayMember = "Value";
             comboBox1.ValueMember = "Key";    */        
         }
+
     }
 }
