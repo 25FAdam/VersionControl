@@ -9,14 +9,10 @@ namespace Hatodik.Entities
 {
     class CarFactory : IToyFactory
     {
-        public Car CreateNew()
+        public Toy CreateNew()
         {
             return new Car();
         }
 
-        Toy IToyFactory.CreateNew()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
