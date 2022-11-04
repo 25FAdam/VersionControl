@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Hatodik.Entities
 {
-    public class Ball
-    {
-        class Ball : Toy
+    
+        public class Ball : Toy
         {
             public SolidBrush BallColor { get; private set; }
 
@@ -20,8 +19,8 @@ namespace Hatodik.Entities
             }
             protected override void DrawImage(Graphics g)
             {
-                g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+                g.FillEllipse(BallColor, 0, 0, Width, Height);
             }
         }
-    }
+    
 }
