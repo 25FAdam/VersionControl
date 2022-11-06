@@ -40,15 +40,15 @@ namespace Hetedik
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(292, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(513, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(310, 12);
+            this.dataGridView2.Location = new System.Drawing.Point(531, 12);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(283, 426);
+            this.dataGridView2.Size = new System.Drawing.Size(257, 426);
             this.dataGridView2.TabIndex = 1;
             // 
             // Form1
