@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Hetedik
 {
@@ -65,6 +65,27 @@ namespace Hetedik
                 value += (decimal)last.Price * item.Volume;
             }
             return value;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            List<decimal> Nyereségek = new List<decimal>();
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = Application.StartupPath;
+
+            sfd.DefaultExt = "txt";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (StreamWriter sw = new StreamWriter(sfd.FileName,false,Encoding.UTF8))
+            {
+                foreach (var ny in Nyereségek)
+                {
+                    sw.Write("Időszak","Nyereség");
+                }
+            }
         }
     }
 }
