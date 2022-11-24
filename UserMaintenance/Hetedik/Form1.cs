@@ -17,6 +17,7 @@ namespace Hetedik
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        List<decimal> Nyeresegek = new List<decimal>();
         public Form1()
         {
             InitializeComponent();
@@ -69,23 +70,31 @@ namespace Hetedik
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            List<decimal> Nyereségek = new List<decimal>();
-            SaveFileDialog sfd = new SaveFileDialog();
-
-            sfd.InitialDirectory = Application.StartupPath;
-
-            sfd.DefaultExt = "txt";
-            sfd.AddExtension = true;
-
-            if (sfd.ShowDialog() != DialogResult.OK) return;
-
-            using (StreamWriter sw = new StreamWriter(sfd.FileName,false,Encoding.UTF8))
+           
+            SaveFileDialog sfd = new SaveFileDialog()
             {
-                foreach (var ny in Nyereségek)
+                DefaultExt = "txt",
+                Filter = "txt files (*.txt)|*.txt",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+          
+
+            if (sfd.ShowDialog() != DialogResult.OK)
+            {
+                StreamWriter r = File.CreateText(sfd.FileName);
+                r.WriteLine("Idoszak\tNyereseg");
+                int index = 0;
+                foreach (var item in Nyeresegek)
                 {
-                    sw.Write("Időszak","Nyereség");
+                    r.WriteLine(index + "\t" + item);
+                    index++;
                 }
+                r.Close();
+
             }
         }
     }
 }
+
