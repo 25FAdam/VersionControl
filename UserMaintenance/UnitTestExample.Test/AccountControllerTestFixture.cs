@@ -36,12 +36,14 @@ namespace UnitTestExample.Test
         }
 
 
-        [Test,
+        [
+            Test,
+            TestCase("Abcdefgh", false),
             TestCase("ABCD1234", false),
-            TestCase("Ab1234", false),
-            TestCase("Abcd1234", false),
-            TestCase("abcd1234", true),
-            TestCase("abcdABCD", true)]
+            TestCase("abcd1234", false),
+            TestCase("Abcd123", false),
+            TestCase("Abcd1234", true)
+        ]
         public void TestValidatePassword(string password, bool expectedResult)
         {
             //ARRANGE
@@ -78,9 +80,37 @@ namespace UnitTestExample.Test
             Assert.AreNotEqual(Guid.Empty, actualResult.ID);
             accountServiceMock.Verify(m => m.CreateAccount(actualResult), Times.Once);
         }
+
+        [
+            Test,
+            TestCase("irf@uni-corvinus", "Abcd1234"),
+            TestCase("irf.uni-corvinus.hu", "Abcd1234"),
+            TestCase("irf@uni-corvinus.hu", "abcd1234"),
+            TestCase("irf@uni-corvinus.hu", "ABCD1234"),
+            TestCase("irf@uni-corvinus.hu", "abcdABCD"),
+            TestCase("irf@uni-corvinus.hu", "Ab1234"),
+        ]
+        public void TestRegisterValidateException(string email, string password)
+        {
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act
+            try
+            {
+                var actualResult = accountController.Register(email, password);
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOf<ValidationException>(ex);
+            }
+
+            // Assert
+        }
         [
     Test,
-    TestCase("irf@uni-corvinus.hu", "Abcd1234")
+            TestCase("irf@uni-corvinus.hu", "Abcd1234")
 ]
         public void TestRegisterApplicationException(string newEmail, string newPassword)
         {
