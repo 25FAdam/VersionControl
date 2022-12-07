@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hatodik", "Hatodik\Hatodik.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hetedik", "Hetedik\Hetedik.csproj", "{8FA081B3-5428-46EE-ADA1-94E7A85AE958}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week10", "week10\week10.csproj", "{19EFB12A-34E2-436C-8D1F-996856CDDF52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8FA081B3-5428-46EE-ADA1-94E7A85AE958}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA081B3-5428-46EE-ADA1-94E7A85AE958}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA081B3-5428-46EE-ADA1-94E7A85AE958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19EFB12A-34E2-436C-8D1F-996856CDDF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EFB12A-34E2-436C-8D1F-996856CDDF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EFB12A-34E2-436C-8D1F-996856CDDF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EFB12A-34E2-436C-8D1F-996856CDDF52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
