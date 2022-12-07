@@ -29,7 +29,7 @@ namespace Week10
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
 
-            gc.GameOver += Gc_GameOver;
+            gc.GameOver += Gc_GameOver1;
 
             for (int i = 0; i < populationSize; i++)
             {
