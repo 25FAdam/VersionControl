@@ -19,14 +19,12 @@ namespace week10
         int nbrOfSteps = 10;
         int nbrOfStepsIncrement = 10;
         int generation = 1;
-
+        Brain winnerBrain = null;
         public Form1()
         {
             InitializeComponent();
-
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
-
 
             gc.GameOver += Gc_GameOver;
 
