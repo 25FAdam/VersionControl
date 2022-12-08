@@ -27,6 +27,15 @@ namespace week10
             ga = gc.ActivateDisplay();
             Controls.Add(ga);
 
+
+            gc.GameOver += Gc_GameOver;
+
+            for (int i = 0; i < populationSize; i++)
+            {
+                gc.AddPlayer(nbrOfSteps);
+            }
+
+            gc.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
