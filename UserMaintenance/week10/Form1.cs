@@ -25,6 +25,14 @@ namespace week10
 
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            
+            gc.AddPlayer();
+            
+            gc.Start(true);
+        }
+
     }
 }
